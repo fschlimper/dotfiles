@@ -43,3 +43,8 @@
 (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "S-C-<down>") 'shrink-window)
 (global-set-key (kbd "S-C-<up>") 'enlarge-window)
+
+;; Powerline
+(require 'powerline)
+(require 'moe-theme)
+(powerline-moe-theme)
