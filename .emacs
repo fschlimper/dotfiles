@@ -16,7 +16,8 @@
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (ido-mode 1)
-(set-default-font "Source Code Pro Medium 14")
+(add-to-list 'default-frame-alist '(font . "Source Code Pro Medium-13"))
+(set-face-attribute 'default t :font "Source Code Pro Medium-13")
 
 ;; Theme
 (custom-set-variables
@@ -26,8 +27,8 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
- '(custom-enabled-themes (quote (wombat)))
- '(package-selected-packages (quote (haskell-mode smex))))
+ '(custom-enabled-themes '(wombat))
+ '(package-selected-packages '(groovy-mode haskell-mode smex)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
