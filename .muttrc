@@ -1,0 +1,27 @@
+set realname = 
+set from = 
+set use_from = yes
+set envelope_from = yes
+
+set smtp_url = 
+set smtp_pass =
+
+# Gmail Local
+set folder = ~/Mail
+set mbox_type = Maildir
+set spoolfile = ~/Mail/gmail/INBOX
+
+# Gmail IMAP
+# set imap_user =
+# set imap_pass =
+# set folder = "imaps://"
+# set spoolfile = "+INBOX"
+# set ssl_force_tls = yes
+
+# G to get mail
+bind index G imap-fetch-mail
+set editor = "emacs -nw"
+set charset = "utf-8"
+set record = ''
+set sort = threads
+set mailcap_path = ~/.mailcap

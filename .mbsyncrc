@@ -1,0 +1,68 @@
+#################################
+######## Account mailbox ########
+#################################
+
+IMAPAccount gmail
+Host imap.gmail.com
+Port 993
+User
+Pass
+SSLType IMAPS
+# SSLVersions TLSv1.2
+CertificateFile /etc/ssl/certs/ca-bundle.crt
+
+# Remote storage
+IMAPStore gmail-remote
+Account gmail
+
+# Local storage
+MaildirStore gmail-local
+SubFolders Verbatim
+Path ~/Mail/gmail/
+Inbox ~/Mail/gmail/INBOX
+
+Channel gmail-inbox
+Master :gmail-remote:"INBOX"
+Slave :gmail-local:INBOX
+Patterns *
+Create Both
+Expunge Both
+SyncState *
+
+# Channel mailbox-archive
+# Master :mailbox-remote:"Archiv"
+# Slave :mailbox-local:archive
+# Create Both
+# Expunge Both
+# 
+# Channel mailbox-drafts
+# Master :mailbox-remote:"Entw&APw-rfe"
+# Slave :mailbox-local:drafts
+# Create Both
+# Expunge Both
+# 
+# Channel mailbox-sent
+# Master :mailbox-remote:"Gesendete Objekte"
+# Slave :mailbox-local:sent
+# Create Both
+# Expunge Both
+# 
+# Channel mailbox-trash
+# Master :mailbox-remote:"Papierkorb"
+# Slave :mailbox-local:trash
+# Create Both
+# Expunge Both
+# 
+# Channel mailbox-junk
+# Master :mailbox-remote:"Spam"
+# Slave :mailbox-local:junk
+# Create Both
+# Expunge Both
+
+Group gmail
+Channel gmail-inbox
+# Channel mailbox-archive
+# Channel mailbox-drafts
+# Channel mailbox-sent
+# Channel mailbox-trash
+# Channel mailbox-junk
